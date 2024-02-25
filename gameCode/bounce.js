@@ -55,6 +55,9 @@ function resetGame() {
 
     // Redraw the game area
     drawCircle();
+
+    // Resets the Audio file
+    document.getElementById('audioFileInput').value = '';
 }
 
 function playNote(noteIndex) {
