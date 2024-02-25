@@ -39,7 +39,7 @@ div.banner > h1 {
 
 div.content-area {
 	width: 100%;
-	min-height: 100vh;
+	min-height: 200vh;
 }
 
 div.wrapper {
@@ -53,7 +53,7 @@ div.wrapper {
 div.content {
 	grid-area: "content";
 	margin: 40px;
-	line-height: 30px;
+	line-height: 20px;
 	display: flex;
 	flex-direction: column;
 	align-content: center;
@@ -63,7 +63,7 @@ div.content {
 div.content > h2 {
 	font-weight: bolder;
   font-size: 8.8em;
-	font-weight: 800;
+	font-weight: 400;
 	color: #FF10F0;
   
 }
@@ -189,16 +189,3 @@ div.useful-links > ul > li > a {
 	}
 }
 
-
-.svg-link {
-	display: inline-block; /* Ensure the link behaves like a block element */
-	margin: 20px; /* Adjust margins as needed */
-	padding: 10px; /* Adjust paddings as needed */
-	text-decoration: none; /* Remove underline from link */
-}
-
-/* CSS to style the image */
-.svg-image {
-	width: 200px; /* Adjust width as needed */
-	height: auto; /* Maintain aspect ratio */
-}
