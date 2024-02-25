@@ -58,6 +58,7 @@ div.content {
 	flex-direction: column;
 	align-content: center;
 	justify-content: center;
+	color:#00FEFC;
 }
 
 div.content > h2 {

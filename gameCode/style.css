@@ -6,20 +6,25 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color:#EE82EE;
   background-color: #E8DAEF; /* Light purple background */
 }
 
 h1 {
-  color: #000000; /* Black color for the title */
+  color: #ffffff; /* Black color for the title */
   margin: 20px 0;
 }
-
+h4 {
+  color: blue; 
+  margin-top: 500px;
+  padding : 30px;
+}
 input[type=range] {
   -webkit-appearance: none; /* Override default CSS styles */
   width: 100%;
   height: 5px; /* Decreased thickness of the slider */
   background: #EE82EE; /* Color of the provided image for slider line */
-  border-radius: 5px;
+  border-radius: 25px;
   outline: none;
   margin: 10px 0;
 }
@@ -34,6 +39,7 @@ input[type=range]::-webkit-slider-thumb {
   border: 0;
   border-radius: 50%;
   transition: background 0.3s ease-in-out;
+  padding: 20px;
 }
 
 input[type=range]::-webkit-slider-thumb:hover {
@@ -61,6 +67,7 @@ input[type=range]::-moz-range-thumb:hover {
   width: 200px; /* Adjusted width to prevent text cutoff */
   height: 34px;
   margin: 20px 10px;
+  color: #E8DAEF;
 }
 
 .button-label {
@@ -74,11 +81,12 @@ input[type=range]::-moz-range-thumb:hover {
   text-align: center;
   line-height: 34px;
   font-size: 14px;
-  color: #fff;
+  color: #EE82EE;
 }
 
 .button-label:before {
   content: attr(data-off);
+  border-radius: 25px;
 }
 
 .toggle-button input[type="checkbox"]:checked + .button-label {
@@ -87,6 +95,7 @@ input[type=range]::-moz-range-thumb:hover {
 
 .toggle-button input[type="checkbox"]:checked + .button-label:before {
   content: attr(data-on);
+  color: #00FFFF;
 }
 
 canvas {
@@ -98,18 +107,23 @@ canvas {
 
 button {
   background-color: #00FFFF; /* Cyan color for buttons */
-  color: #000000; /* Black text on buttons */
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
+  font-size: 50px;
+  color: #EE82EE; /* Black text on buttons */
+  border: #EE82EE;
+  border-spacing: 5px;
+  border-radius: 50px;
+  font-size: 50px;
+  padding: 20px 20px;
   margin: 20px 0;
   cursor: pointer;
-  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 button:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(238, 130, 238, 1);
+  //border-radius: 25px;
+
 }
 /* Ensure the toggle buttons are not overlapping with the canvas */
 #toggle-buttons-container {
@@ -121,14 +135,17 @@ button:hover {
 
 /* Add an ID to the table containing the toggle buttons for specific targeting */
 #toggle-buttons-table {
+  border-radius: 25px;
   margin-bottom: 20px; /* Ensure there is space below the table before the canvas starts */
 }
 /* Additional styles can be added below for further customization */
 /* Custom styles for the toggle switches */
 .toggle-button input[type="checkbox"] + .button-label {
+  border-radius: 25px;
   background: #00FFFF; /* Cyan color for off state to match the reset button */
 }
 
 .toggle-button input[type="checkbox"]:checked + .button-label {
+  border-radius: 25px;
   background: #800080; /* Deep purple color for on state */
 }
