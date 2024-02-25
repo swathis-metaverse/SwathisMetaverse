@@ -1,0 +1,134 @@
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #E8DAEF; /* Light purple background */
+}
+
+h1 {
+  color: #000000; /* Black color for the title */
+  margin: 20px 0;
+}
+
+input[type=range] {
+  -webkit-appearance: none; /* Override default CSS styles */
+  width: 100%;
+  height: 5px; /* Decreased thickness of the slider */
+  background: #EE82EE; /* Color of the provided image for slider line */
+  border-radius: 5px;
+  outline: none;
+  margin: 10px 0;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 25px;
+  background: #00FFFF; /* Color of the reset button for the slider thumb */
+  cursor: pointer;
+  border: 0;
+  border-radius: 50%;
+  transition: background 0.3s ease-in-out;
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+  background: #00B2EE; /* Slightly darker color for hover effect */
+}
+
+input[type=range]::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #00FFFF; /* Color of the reset button for the slider thumb */
+  cursor: pointer;
+  border: 0;
+  border-radius: 50%;
+  transition: background 0.3s ease-in-out;
+}
+
+input[type=range]::-moz-range-thumb:hover {
+  background: #00B2EE; /* Slightly darker color for hover effect */
+}
+
+/* Custom styles for the toggle switches */
+.toggle-button {
+  position: relative;
+  display: inline-block;
+  width: 200px; /* Adjusted width to prevent text cutoff */
+  height: 34px;
+  margin: 20px 10px;
+}
+
+.button-label {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #00FFFF; /* Color of the reset button for off state */
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  line-height: 34px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.button-label:before {
+  content: attr(data-off);
+}
+
+.toggle-button input[type="checkbox"]:checked + .button-label {
+  background: #EE82EE; /* Color of the provided image for on state */
+}
+
+.toggle-button input[type="checkbox"]:checked + .button-label:before {
+  content: attr(data-on);
+}
+
+canvas {
+  /* Removed the margin-top property */
+  border: 5px solid #000000; /* Black border for canvas */
+  display: block;
+  margin: auto; /* This will center the canvas on the page */
+}
+
+button {
+  background-color: #00FFFF; /* Cyan color for buttons */
+  color: #000000; /* Black text on buttons */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+/* Ensure the toggle buttons are not overlapping with the canvas */
+#toggle-buttons-container {
+  display: flex;
+  justify-content: center; /* This will center the toggle buttons */
+  flex-wrap: wrap; /* This allows toggle buttons to wrap to the next line if space is insufficient */
+  margin-bottom: 20px; /* Add space between toggle buttons and canvas */
+}
+
+/* Add an ID to the table containing the toggle buttons for specific targeting */
+#toggle-buttons-table {
+  margin-bottom: 20px; /* Ensure there is space below the table before the canvas starts */
+}
+/* Additional styles can be added below for further customization */
+/* Custom styles for the toggle switches */
+.toggle-button input[type="checkbox"] + .button-label {
+  background: #00FFFF; /* Cyan color for off state to match the reset button */
+}
+
+.toggle-button input[type="checkbox"]:checked + .button-label {
+  background: #800080; /* Deep purple color for on state */
+}

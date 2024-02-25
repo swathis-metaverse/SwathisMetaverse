@@ -1,0 +1,73 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Bouncing Ball</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="bounce.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            setup();
+            $('.toggle-button input[type="checkbox"]').change(function() {
+                if (this.checked) {
+                    $(this).next('.button-label').css('background-color', '#FF10F0'); // The color when checked
+                } else {
+                    $(this).next('.button-label').css('background-color', '#00FEFC'); // The color when unchecked
+                }
+            });
+        });
+    </script>
+</head>
+<body align="center" class="container-fluid">
+    <table align = "center">
+        <tr>
+            <th>
+                <div>
+                    <h4>Boundary Size</h4>
+                    <div>
+                        <input type="range" id="boundarySlider" min="10" max="300" value="150">
+                    </div>
+                </div>
+            </th>
+            <th>
+                <div>
+                    <h4>Gravity Power</h4>
+                    <div>
+                        <input type="range" id="gravitySlider" min="0" max ="10" value="0">
+                    </div>
+                </div>
+            </th>
+            <th>
+                <div>
+                    <h4 >Ball Size</h4>
+                    <input type="range" id="ballSizeSlider" min="5" max="30" value="10">
+                </div>
+            </th>
+        </tr>
+    </table>
+    <table align="center" id="toggle-buttons-container">
+        <tr>
+            <th>
+                <label class="toggle-button">
+                    <input type="checkbox" hidden id="useImageCheckbox" />
+                    <span class="button-label" data-on="On" data-off="Off"></span> Use Developer Balls
+                </label>
+            </th>
+            <th>
+                <label class="toggle-button">
+                    <input type="checkbox" hidden id="collideCheckbox" />
+                    <span class="button-label" data-on="On" data-off="Off"></span> Enable Collision
+                </label>
+            </th>
+            <th>
+                <label class="toggle-button">
+                    <input type="checkbox" hidden id="playNoteCheckbox" />
+                    <span class="button-label" data-on="On" data-off="Off"></span> Play Note on Bounce
+                </label>
+            </th>
+        </tr>
+    </table>
+    <canvas id="canvas" width="800" height="550" style="background-color:black"></canvas>
+    <div id="controls">
+        <button id="resetButton">Reset</button>
+    </div>    
+</body>
