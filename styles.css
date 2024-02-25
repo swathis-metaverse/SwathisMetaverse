@@ -1,11 +1,32 @@
- #app {
+.gradient {
+     /* Replace the gradient with a solid color */
+    background-color: #6b97f7; /* Choose your desired color */
+    /* Other gradient-related properties */
+    background-size: 180% 180%;
+    animation: gradient-animation 6s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0 0; /* Changed to absolute values */
+    }
+    50% {
+        background-position: 100% 0; /* Changed to absolute values */
+    }
+    100% {
+        background-position: 0 0; /* Changed to absolute values */
+    }
+}
+
+#app {
     overflow: hidden;
     touch-action: pan-up;
     color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     text-shadow: 0 0 5px #ffffff, 0 0 20px #000, 0 0 30px #000;
-  }
+}
+
 title{
     font-family: 'Inknut Antiqua', serif; /* Change font family */
     font-weight: bold;
@@ -53,10 +74,24 @@ p {
 }
 
 .play-button:hover {
-    box-shadow: 0 0 20px 10px rgba(255, 16, 240, 0.8); /* Glow effect on hover */
+    box-shadow: 0 0 20px 10px rgba(255, 16, 240, 0.8); 
 }
 
 .play-button span {
-    -webkit-text-stroke: 1px black; /* Thin black border for WebKit browsers */
-    color: white; /* Set text color */
+    -webkit-text-stroke: 1px black;
+    color: white; 
 }
+
+a {
+    color: #0060B6;
+    text-decoration: none;
+}
+
+a:hover {
+    color:#00A0C6; 
+    text-decoration:none; 
+    cursor:pointer;  
+}
+
+
+  
