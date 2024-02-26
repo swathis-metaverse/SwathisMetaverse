@@ -55,6 +55,9 @@ function resetGame() {
 
     // Redraw the game area
     drawCircle();
+
+    // Resets the Audio file
+    document.getElementById('audioFileInput').value = '';
 }
 
 function playNote(noteIndex) {
@@ -250,9 +253,16 @@ function collisionCircle(ball){
         ball.color = "rgb(" + r + "," + g + "," + b + ")";
         
         // Check if the play note checkbox is checked and play the note
-        if (document.getElementById('playNoteCheckbox').checked) {
+        var audioFileInput = document.getElementById('audioFileInput');
+        if (document.getElementById('playNoteCheckbox').checked && audioFileInput.files.length === 0) {
             playNote(ball.noteIndex);
             ball.noteIndex = (ball.noteIndex + 1) % musicalScale.length;
+        } else if (document.getElementById('playNoteCheckbox').checked) {
+            if (audioFileInput.files.length != 0) { 
+                var audioFile = audioFileInput.files[0];
+                var audio = new Audio(URL.createObjectURL(audioFile));
+                audio.play();
+            }
         }
     }
 }
